@@ -36,6 +36,9 @@ crashlytics-build.properties
 values-b+*/
 *.pyc
 
+google-services.json
+local.properties
+
 app/google-services.json
 app/src/androidTest/assets
 app/src/androidTest/screenshots
