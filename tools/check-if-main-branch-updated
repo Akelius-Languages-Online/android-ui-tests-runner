@@ -1,0 +1,26 @@
+#!/bin/bash
+
+project_root_path="$(git rev-parse --show-toplevel)/"
+
+source ${project_root_path}.color_helper
+
+project_git_name="repo"
+
+pushd "${project_root_path}${project_git_name}" > /dev/null
+
+git fetch > /dev/null
+
+if [ $(git rev-parse HEAD) == $(git rev-parse @{u}) ]; then
+    echo "${CLI_COLOR_GREEN}There are no changes${CLI_COLOR_RESET}"
+
+    popd > /dev/null
+    exit 1
+else
+    echo "${CLI_COLOR_BLUE}There are changes${CLI_COLOR_RESET}"
+    echo ""
+    git log --oneline --graph HEAD..FETCH_HEAD > /dev/null
+    echo ""
+
+    popd > /dev/null
+    exit 2
+fi

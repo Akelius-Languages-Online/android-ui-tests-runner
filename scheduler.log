@@ -1,0 +1,165 @@
+Mon Nov 13 14:14:51 CET 2023
+--------------------------------------------
+[32mTests are enabled, processings...(B[m
+From github.com:Akelius-Languages-Online/university-language-app-android
+   301a39ef4..4800092f2  develop    -> origin/develop
+[34mThere are changes(B[m
+
+
+[32mEntering automated-ui-tests folder...(B[m
+
+[32mHard reset project to remote develop...(B[m
+Already on 'develop'
+
+[32mRunning [34mde.akelius.university.mobile.languageapplication.e2e.cat: /Users/ranapat/Projects/android-ui-tests-runner/scheduler.tests: No such file or directory(B[m[32m...(B[m
+[35m Running on [34mRF8M53G6FFE[35m...(B[m
+[36m  Running a single test...(B[m
+Configuration on demand is an incubating feature.
+
+> Configure project :
+Warning! Package "de.akelius.university.consumerkit:consumerkit:debug.BUILD-SNAPSHOT" might be unstable! If you release please make sure you replace with a stable version!
+
+> Configure project :app
+ComposeOptions.kotlinCompilerVersion is deprecated. Compose now uses the kotlin compiler defined in your buildscript.
+
+> Task :app:preBuild UP-TO-DATE
+> Task :qrcode:preBuild UP-TO-DATE
+> Task :qrcode:preDebugBuild UP-TO-DATE
+> Task :app:preDevelopmentDebugBuild UP-TO-DATE
+> Task :qrcode:compileDebugAidl NO-SOURCE
+> Task :qrcode:packageDebugRenderscript NO-SOURCE
+> Task :qrcode:writeDebugAarMetadata UP-TO-DATE
+> Task :app:generateDevelopmentDebugBuildConfig UP-TO-DATE
+> Task :qrcode:compileDebugRenderscript NO-SOURCE
+> Task :app:compileDevelopmentDebugAidl NO-SOURCE
+> Task :app:compileDevelopmentDebugRenderscript NO-SOURCE
+> Task :qrcode:generateDebugResValues UP-TO-DATE
+> Task :qrcode:generateDebugResources UP-TO-DATE
+> Task :qrcode:packageDebugResources UP-TO-DATE
+> Task :qrcode:extractDeepLinksDebug UP-TO-DATE
+> Task :qrcode:processDebugManifest UP-TO-DATE
+> Task :qrcode:compileDebugLibraryResources UP-TO-DATE
+> Task :qrcode:parseDebugLocalResources UP-TO-DATE
+> Task :qrcode:generateDebugRFile UP-TO-DATE
+> Task :qrcode:generateDebugBuildConfig UP-TO-DATE
+> Task :qrcode:compileDebugKotlin UP-TO-DATE
+> Task :qrcode:javaPreCompileDebug UP-TO-DATE
+> Task :qrcode:compileDebugJavaWithJavac UP-TO-DATE
+> Task :qrcode:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :qrcode:mergeDebugShaders UP-TO-DATE
+> Task :qrcode:compileDebugShaders NO-SOURCE
+> Task :qrcode:generateDebugAssets UP-TO-DATE
+> Task :qrcode:packageDebugAssets UP-TO-DATE
+> Task :qrcode:processDebugJavaRes NO-SOURCE
+> Task :qrcode:bundleLibResDebug UP-TO-DATE
+> Task :qrcode:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :qrcode:mergeDebugJniLibFolders UP-TO-DATE
+> Task :qrcode:mergeDebugNativeLibs NO-SOURCE
+> Task :qrcode:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:checkDevelopmentDebugAarMetadata UP-TO-DATE
+> Task :app:generateDevelopmentDebugResValues UP-TO-DATE
+> Task :app:injectCrashlyticsMappingFileIdDevelopmentDebug UP-TO-DATE
+> Task :app:processDevelopmentDebugGoogleServices UP-TO-DATE
+> Task :app:mapDevelopmentDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDevelopmentDebugResources UP-TO-DATE
+> Task :app:mergeDevelopmentDebugResources UP-TO-DATE
+> Task :app:createDevelopmentDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDevelopmentDebug UP-TO-DATE
+> Task :app:processDevelopmentDebugMainManifest UP-TO-DATE
+> Task :app:processDevelopmentDebugManifest UP-TO-DATE
+> Task :app:processDevelopmentDebugManifestForPackage UP-TO-DATE
+> Task :app:processDevelopmentDebugResources UP-TO-DATE
+> Task :app:kaptGenerateStubsDevelopmentDebugKotlin UP-TO-DATE
+> Task :app:kaptDevelopmentDebugKotlin UP-TO-DATE
+> Task :app:compileDevelopmentDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileDevelopmentDebug UP-TO-DATE
+> Task :app:compileDevelopmentDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleDevelopmentDebugClassesToCompileJar UP-TO-DATE
+> Task :app:preDevelopmentDebugAndroidTestBuild SKIPPED
+> Task :app:compileDevelopmentDebugAndroidTestAidl NO-SOURCE
+> Task :app:processDevelopmentDebugAndroidTestManifest UP-TO-DATE
+> Task :app:compileDevelopmentDebugAndroidTestRenderscript NO-SOURCE
+> Task :app:generateDevelopmentDebugAndroidTestBuildConfig UP-TO-DATE
+> Task :app:checkDevelopmentDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :app:generateDevelopmentDebugAndroidTestResValues UP-TO-DATE
+> Task :app:mapDevelopmentDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:generateDevelopmentDebugAndroidTestResources UP-TO-DATE
+> Task :app:mergeDevelopmentDebugAndroidTestResources UP-TO-DATE
+> Task :app:processDevelopmentDebugAndroidTestResources UP-TO-DATE
+> Task :app:kaptGenerateStubsDevelopmentDebugAndroidTestKotlin UP-TO-DATE
+> Task :app:kaptDevelopmentDebugAndroidTestKotlin UP-TO-DATE
+> Task :app:compileDevelopmentDebugAndroidTestKotlin UP-TO-DATE
+> Task :app:javaPreCompileDevelopmentDebugAndroidTest UP-TO-DATE
+> Task :app:compileDevelopmentDebugAndroidTestJavaWithJavac UP-TO-DATE
+> Task :app:mergeDevelopmentDebugShaders UP-TO-DATE
+> Task :app:compileDevelopmentDebugShaders NO-SOURCE
+> Task :app:generateDevelopmentDebugAssets UP-TO-DATE
+> Task :app:mergeDevelopmentDebugAssets UP-TO-DATE
+> Task :app:compressDevelopmentDebugAssets UP-TO-DATE
+> Task :app:l8DexDesugarLibDevelopmentDebug UP-TO-DATE
+> Task :app:processDevelopmentDebugJavaRes NO-SOURCE
+> Task :app:mergeDevelopmentDebugJavaResource UP-TO-DATE
+> Task :app:checkDevelopmentDebugDuplicateClasses UP-TO-DATE
+> Task :app:dexBuilderDevelopmentDebug UP-TO-DATE
+> Task :app:mergeExtDexDevelopmentDebug UP-TO-DATE
+> Task :app:mergeLibDexDevelopmentDebug UP-TO-DATE
+> Task :app:mergeProjectDexDevelopmentDebug UP-TO-DATE
+> Task :app:mergeDevelopmentDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeDevelopmentDebugNativeLibs NO-SOURCE
+> Task :app:stripDevelopmentDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningDevelopmentDebug UP-TO-DATE
+> Task :app:writeDevelopmentDebugAppMetadata UP-TO-DATE
+> Task :app:writeDevelopmentDebugSigningConfigVersions UP-TO-DATE
+> Task :app:packageDevelopmentDebug UP-TO-DATE
+> Task :app:createDevelopmentDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:mergeDevelopmentDebugAndroidTestShaders UP-TO-DATE
+> Task :app:compileDevelopmentDebugAndroidTestShaders NO-SOURCE
+> Task :app:generateDevelopmentDebugAndroidTestAssets UP-TO-DATE
+> Task :app:mergeDevelopmentDebugAndroidTestAssets UP-TO-DATE
+> Task :app:compressDevelopmentDebugAndroidTestAssets UP-TO-DATE
+> Task :app:processDevelopmentDebugAndroidTestJavaRes NO-SOURCE
+> Task :app:mergeDevelopmentDebugAndroidTestJavaResource UP-TO-DATE
+> Task :app:mergeDevelopmentDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergeDevelopmentDebugAndroidTestNativeLibs NO-SOURCE
+> Task :app:checkDevelopmentDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:dexBuilderDevelopmentDebugAndroidTest UP-TO-DATE
+> Task :app:mergeExtDexDevelopmentDebugAndroidTest UP-TO-DATE
+> Task :app:mergeLibDexDevelopmentDebugAndroidTest UP-TO-DATE
+> Task :app:mergeProjectDexDevelopmentDebugAndroidTest UP-TO-DATE
+> Task :app:validateSigningDevelopmentDebugAndroidTest UP-TO-DATE
+> Task :app:writeDevelopmentDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:packageDevelopmentDebugAndroidTest UP-TO-DATE
+> Task :app:createDevelopmentDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+
+> Task :app:connectedDevelopmentDebugAndroidTest
+Starting 1 tests on SM-G970F - 12
+
+de.akelius.university.mobile.languageapplication.e2e.cat: /Users/ranapat/Projects/android-ui-tests-runner/scheduler.tests: No such file or directory > initializationError[SM-G970F - 12] [31mFAILED [0m
+	java.lang.RuntimeException: Failed loading specified test class 'de.akelius.university.mobile.languageapplication.e2e.cat: /Users/ranapat/Projects/android-ui-tests-runner/scheduler.tests: No such file or directory'
+	at androidx.test.internal.runner.DirectTestLoader.doCreateRunner(DirectTestLoader.java:50)
+Tests on SM-G970F - 12 failed: There was 1 failure(s).
+
+> Task :app:connectedDevelopmentDebugAndroidTest FAILED
+> Task :app:pullDevelopmentDebugAndroidTestScreenshots
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:connectedDevelopmentDebugAndroidTest'.
+> There were failing tests. See the report at: file:///Users/ranapat/Projects/android-ui-tests-runner/repo/app/build/reports/androidTests/connected/flavors/development/index.html
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.5/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 25s
+82 actionable tasks: 2 executed, 80 up-to-date

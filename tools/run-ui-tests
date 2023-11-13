@@ -1,0 +1,77 @@
+#!/bin/bash
+
+project_root_path="$(git rev-parse --show-toplevel)/"
+
+source ${project_root_path}.color_helper
+
+if [ "help" == "$1" ]; then
+    echo "${CLI_COLOR_GREEN}run-ui-tests <path to test> - runs single test${CLI_COLOR_RESET}"
+    echo "${CLI_COLOR_GREEN}run-ui-tests <path to tests>.* - runs test package${CLI_COLOR_RESET}"
+    echo "${CLI_COLOR_GREEN}run-ui-tests <path to test> <device id(s)>- runs single test on specific device(s)${CLI_COLOR_RESET}"
+    echo "${CLI_COLOR_GREEN}run-ui-tests - runs all tests on all devices${CLI_COLOR_RESET}"
+    echo "${CLI_COLOR_GREEN}run-ui-tests * <device id(s)> - runs all tests on specific device(s)${CLI_COLOR_RESET}"
+    echo ""
+    echo "${CLI_COLOR_YELLOW}Example: ${CLI_COLOR_GREEN}run-ui-tests ${CLI_COLOR_BLUE}testingenvironment.onlinemode.anonymoususer.a0.chapter1.* ${CLI_COLOR_GREEN}RF8M53G6FFE,RZCW31V3GTT${CLI_COLOR_YELLOW} - runs all chapter1 tests on specific 2 devices${CLI_COLOR_RESET}"
+    echo "${CLI_COLOR_YELLOW}Example: ${CLI_COLOR_GREEN}run-ui-tests ${CLI_COLOR_BLUE}testingenvironment.onlinemode.anonymoususer.a0.chapter1.Quiz ${CLI_COLOR_GREEN}RF8M53G6FFE,RZCW31V3GTT${CLI_COLOR_YELLOW} - runs chapter1.Quiz tests on specific 2 devices${CLI_COLOR_RESET}"
+    echo "${CLI_COLOR_YELLOW}Example: ${CLI_COLOR_GREEN}run-ui-tests ${CLI_COLOR_BLUE}testingenvironment.onlinemode.anonymoususer.a0.chapter1.* ${CLI_COLOR_YELLOW}- runs all chapter1 tests on all devices${CLI_COLOR_RESET}"
+    echo "${CLI_COLOR_YELLOW}Example: ${CLI_COLOR_GREEN}run-ui-tests ${CLI_COLOR_BLUE}testingenvironment.onlinemode.anonymoususer.a0.chapter1.Quiz ${CLI_COLOR_YELLOW}- runs all chapter1.Quiz tests on all devices${CLI_COLOR_RESET}"
+
+    exit 0
+fi
+
+project_git_name="repo"
+project_google_services_path="google-services.json"
+project_google_services_destination="/app/"
+project_local_properties="local.properties"
+project_gradle_properties="gradle.properties"
+package_properties="scheduler.package"
+package=$(cat "${project_root_path}${package_properties}" 2>&1)
+
+if [ -z "$1" ]; then
+    tests="*"
+else
+    tests="$1"
+fi
+if [ -z "$2" ]; then
+    devices=""
+else
+    devices="$2"
+fi
+
+echo "${CLI_COLOR_GREEN}Entering automated-ui-tests folder...${CLI_COLOR_RESET}"
+pushd "${project_root_path}${project_git_name}" > /dev/null
+
+echo ""
+echo "${CLI_COLOR_GREEN}Hard reset project to remote develop...${CLI_COLOR_RESET}"
+git reset --hard > /dev/null
+git clean -df > /dev/null
+# git checkout develop > /dev/null
+git pull > /dev/null
+cp "${project_root_path}${project_google_services_path}" "${project_root_path}${project_git_name}${project_google_services_destination}"
+cp "${project_root_path}${project_local_properties}" "${project_root_path}${project_git_name}"
+cp "${project_root_path}${project_gradle_properties}" "${project_root_path}${project_git_name}"
+
+echo ""
+echo "${CLI_COLOR_GREEN}Running ${CLI_COLOR_BLUE}${package}.${tests}${CLI_COLOR_RESET}${CLI_COLOR_GREEN}...${CLI_COLOR_RESET}"
+
+if [ -z "$devices" ]; then
+    echo "${CLI_COLOR_YELLOW}  Running on all connected devices...${CLI_COLOR_RESET}"
+    if [ "${tests:0-2}" == ".*" ]; then
+        echo "${CLI_COLOR_BLUE}  Running a whole package...${CLI_COLOR_RESET}"
+        ./gradlew connectedDevelopmentDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package="${package}.${tests::-2}"
+    else
+        echo "${CLI_COLOR_LIGHT_BLUE}  Running a single test...${CLI_COLOR_RESET}"
+        ./gradlew connectedDevelopmentDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class="${package}.${tests}"
+    fi
+else
+    echo "${CLI_COLOR_VIOLET} Running on ${CLI_COLOR_BLUE}${devices}${CLI_COLOR_VIOLET}...${CLI_COLOR_RESET}"
+    if [ "${tests:0-2}" == ".*" ]; then
+        echo "${CLI_COLOR_BLUE}  Running a whole package...${CLI_COLOR_RESET}"
+        ANDROID_SERIAL="${devices}" ./gradlew connectedDevelopmentDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package="${package}.${tests::-2}"
+    else
+        echo "${CLI_COLOR_LIGHT_BLUE}  Running a single test...${CLI_COLOR_RESET}"
+        ANDROID_SERIAL="${devices}" ./gradlew connectedDevelopmentDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class="${package}.${tests}"
+    fi
+fi
+
+popd > /dev/null

@@ -1,0 +1,11 @@
+export CLI_COLOR_RED=`tput setaf 1`
+export CLI_COLOR_GREEN=`tput setaf 2`
+export CLI_COLOR_YELLOW=`tput setaf 3`
+export CLI_COLOR_BLUE=`tput setaf 4`
+export CLI_COLOR_VIOLET=`tput setaf 5`
+export CLI_COLOR_LIGHT_BLUE=`tput setaf 6`
+export CLI_COLOR_WHITE=`tput setaf 7`
+export CLI_COLOR_GRAY=`tput setaf 8`
+export CLI_COLOR_PINK=`tput setaf 9`
+export CLI_COLOR_LIGHT_GREEN=`tput setaf 10`
+export CLI_COLOR_RESET=`tput sgr0`

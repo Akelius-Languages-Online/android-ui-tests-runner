@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source ./.color_helper
+
+# every 30 minutes - 30 * 60 = 1800
+
+while true; do
+    date
+    echo "--------------------------------------------"
+    ./tools/trigger-ui-tests-on-main-branch-update
+    sleep 1800
+done

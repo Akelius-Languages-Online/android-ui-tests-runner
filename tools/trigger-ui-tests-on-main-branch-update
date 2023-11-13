@@ -1,0 +1,37 @@
+#!/bin/bash
+
+project_root_path="$(git rev-parse --show-toplevel)/"
+
+source ${project_root_path}.color_helper
+
+project_running_properties="scheduler.running"
+project_enabled_properties="scheduler.enabled"
+project_tests_properties="scheduler.tests"
+project_devices_properties="scheduler.devices"
+
+running=$(cat "${project_root_path}${project_running_properties}" 2>&1)
+enabled=$(cat "${project_root_path}${project_enabled_properties}" 2>&1)
+tests=$(cat "${project_root_path}${project_tests_properties}" 2>&1)
+devices=$(cat "${project_root_path}${project_devices_properties}" 2>&1)
+
+if [ "$running" == "1" ]; then
+    echo "${CLI_COLOR_YELLOW}Tests are currently running, skipping...${CLI_COLOR_RESET}"
+    return 1
+fi
+if [ "$enabled" == 1 ]; then
+    echo "${CLI_COLOR_GREEN}Tests are enabled, processings...${CLI_COLOR_RESET}"
+else
+    echo "${CLI_COLOR_RED}Tests are disabled, skipping...${CLI_COLOR_RESET}"
+    return 1
+fi
+
+${project_root_path}tools/check-if-main-branch-updated
+res=$?
+
+if [ $res == 1 ]; then
+    echo ""
+else
+    echo 1 >  "${project_root_path}${project_running_properties}"
+    ${project_root_path}tools/run-ui-tests "${tests}" "${devices}"
+    echo 0 >  "${project_root_path}${project_running_properties}"
+fi

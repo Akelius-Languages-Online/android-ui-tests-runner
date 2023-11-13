@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./scheduler.raw > scheduler.log 2>&1
