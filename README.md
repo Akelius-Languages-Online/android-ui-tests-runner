@@ -39,6 +39,10 @@ In cases of a change it will run all specified tests on predefined devices.
 
 Run `./scheduler`
 
+### Monitor automated runs
+
+`tail -f scheduler.log`
+
 ## Manual
 
 It's a shortcut to calling gradle
